@@ -6,6 +6,16 @@
         
         - [技术架构](前端技术架构与工程/前端工程师的职责/技术架构.md)
         - [工程服务体系](前端技术架构与工程/前端工程师的职责/工程服务体系.md)
+        
+    - [编程语言](前端技术架构与工程/编程语言/)
+    
+        - [HTML](前端技术架构与工程/编程语言/HTML.md)
+        - [CSS](前端技术架构与工程/编程语言/CSS/)
+        
+            - [CSS存在问题](前端技术架构与工程/编程语言/CSS/CSS存在问题.md)
+            
+        - [JavaScript](前端技术架构与工程/编程语言/JavaScript.md)
+        - [TypeScript](前端技术架构与工程/编程语言/TypeScript.md)
 
 - CSS
 
@@ -21,6 +31,9 @@
 - npm
    
    - [npx](npm/npx.md)
+   - [registry](npm/registry.md)
+   
+- [Nginx](Nginx/)
    
 - [Redis](Redis/)
 
