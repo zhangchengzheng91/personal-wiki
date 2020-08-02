@@ -2,7 +2,7 @@
 
 ## 正则表达式匹配指定字符区间的内容，且不包含指定字符
 
-|123|123|
+|模式|描述|
 |:---|:---|
 |(?<=%%!)|匹配一个位置,而不是字符.这个位置在 **%%! 后面**|
 |(?=%%~)|匹配一个位置,而不是字符.这个位置在 **%%~ 前面**|
@@ -14,6 +14,7 @@
 非贪婪匹配：有多个的会匹配多个
 
 ```javascript
-const pathname = window.location.pathname // /asset/orderbook
-pathname.match(/(?<=\/).*?(?=\/)/) // asset
+const pathname = window.location.pathname // /my/name/is/tom
+pathname.match(/(?<=\/).*?(?=\/)/)[0] // my
+pathname.match(/(?<=\/).*(?=\/)/)[0] // my/name/is
 ```
