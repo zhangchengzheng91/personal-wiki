@@ -2,6 +2,17 @@
 
 - [正则表达式](正则表达式/)
 
+- [webpack](webpack/)
+
+    - webpack与构建发展简史
+    
+        - [课程介绍](webpack/webpack与构建发展简史/1.课程介绍.md)
+        - [内容综述](webpack/webpack与构建发展简史/2.内容综述.md)
+        - [为什么需要构建工具](webpack/webpack与构建发展简史/3.为什么需要构建工具.md)
+        - [前端构建演变之路](webpack/webpack与构建发展简史/4.前端构建演变之路.md)
+        - [为什么选择webpack](webpack/webpack与构建发展简史/5.为什么选择webpack.md)
+        - [初识webpack](webpack/webpack与构建发展简史/6.初识webpack.md)
+
 - [垃圾回收](垃圾回收/)
 
 - [前端工程化](前端技术架构与工程/)
