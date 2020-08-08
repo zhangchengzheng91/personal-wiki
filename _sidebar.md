@@ -13,6 +13,14 @@
         - [为什么选择webpack](webpack/webpack与构建发展简史/5.为什么选择webpack.md)
         - [初识webpack](webpack/webpack与构建发展简史/6.初识webpack.md)
 
+    - webpack 基础用法
+    
+        - [entry](webpack/02webpack基础用法/01-entry.md)
+        - [output](webpack/02webpack基础用法/02-output.md)
+        - [loaders](webpack/02webpack基础用法/03-loaders.md)
+        - [plugins](webpack/02webpack基础用法/04-plugins.md)
+        - [mode](webpack/02webpack基础用法/05-mode.md)
+
 - [垃圾回收](垃圾回收/)
 
 - [前端工程化](前端技术架构与工程/)
