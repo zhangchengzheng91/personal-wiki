@@ -20,6 +20,10 @@
         - [loaders](webpack/02webpack基础用法/03-loaders.md)
         - [plugins](webpack/02webpack基础用法/04-plugins.md)
         - [mode](webpack/02webpack基础用法/05-mode.md)
+        - [解析 ES6](webpack/02webpack基础用法/06-解析ES6.md)
+        - [解析 css 和 less](webpack/02webpack基础用法/07-解析css和less.md)
+        - [解析图片和字体资源](webpack/02webpack基础用法/08-解析图片和字体资源.md)
+        - [webpack 中的文件监听](webpack/02webpack基础用法/09-webpack中的文件监听.md)
 
 - [垃圾回收](垃圾回收/)
 
