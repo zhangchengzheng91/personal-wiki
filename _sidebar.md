@@ -25,6 +25,7 @@
         - [解析图片和字体资源](webpack/02webpack基础用法/08-解析图片和字体资源.md)
         - [webpack 中的文件监听](webpack/02webpack基础用法/09-webpack中的文件监听.md)
         - [webpack 中的热更新及原理分析](webpack/02webpack基础用法/10-webpack中的热更新及原理分析.md)
+        - [文件指纹策略](webpack/02webpack基础用法/11-文件指纹策略.md)
 
 - [垃圾回收](垃圾回收/)
 
