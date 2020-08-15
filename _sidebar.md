@@ -26,6 +26,7 @@
         - [webpack 中的文件监听](webpack/02webpack基础用法/09-webpack中的文件监听.md)
         - [webpack 中的热更新及原理分析](webpack/02webpack基础用法/10-webpack中的热更新及原理分析.md)
         - [文件指纹策略](webpack/02webpack基础用法/11-文件指纹策略.md)
+        - [代码压缩](webpack/02webpack基础用法/12-代码压缩.md)
 
 - [垃圾回收](垃圾回收/)
 
