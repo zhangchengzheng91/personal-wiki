@@ -35,7 +35,7 @@ px 是绝对单位
 
 移动端 CSS px 自动转换成 rem
 
-使用 px2rem-loader
+使用 px2rem-loader，**可以尝试 postcss 的 rem 插件。
 
 页面渲染时计算根元素的 font-size
 
@@ -49,14 +49,14 @@ module.exports = {
 				use: [
 					'style-loader',
 					'css-loader',
-					'less-loader',
 					{
-						'loader': 'px2rem-loader',
+						'loader': 'px2rem-loader', // px2rem-loader 应该放在 less-loader 之后，不然嵌套的时候，build 会报错
 						options: {
 							remUnit: 75,
 							remPrecision: 8,
 						}
 					}
+					'less-loader',
 				]
 			}
 		]
@@ -64,3 +64,16 @@ module.exports = {
 	...,
 }
 ```
+
+如果不想实现 px 2 rem 的转化，可以在样式后面增加注释：
+
+```css
+.page {
+	font-size: 12px; /*no*/
+	width: 375px; /*no*/
+	height: 40px;
+}
+```
+
+推荐阅读：<br/>
+[知乎：为什么很多web项目还是使用 px，而不是 rem？](https://www.zhihu.com/question/313971223/answer/628236155)
