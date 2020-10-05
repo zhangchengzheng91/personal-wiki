@@ -37,6 +37,7 @@
         - [多页面应用打包](webpack/03-webpack进阶用法/05-多页面应用打包.md)
         - [使用source-map](webpack/03-webpack进阶用法/06-使用source-map.md)
         - [提取页面公共资源](webpack/03-webpack进阶用法/07-提取页面公共资源.md)
+        - [tree shaking](webpack/03-webpack进阶用法/08-tree-shaking.md)
 
 - [垃圾回收](垃圾回收/)
 
