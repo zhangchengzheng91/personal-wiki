@@ -40,6 +40,7 @@
         - [tree shaking](webpack/03-webpack进阶用法/08-tree-shaking.md)
         - [scope hoisting](webpack/03-webpack进阶用法/09-Scope-hositing.md)
         - [code split](webpack/03-webpack进阶用法/10-code-split.md)
+        - [eslint](webpack/03-webpack进阶用法/11-eslint.md)
 
 - [垃圾回收](垃圾回收/)
 
