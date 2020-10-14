@@ -4,7 +4,7 @@ webpack 除了可以用来打包应用，也可以用来打包 js 库
 
 实现一个大整数加法库的打包
 
-1. 需要打包压缩版【开发阶段】和非压缩版【线上打包】两个版本
+1. 需要打包压缩版【线上打包】】和非压缩版【开发阶段】两个版本
 1. 支持 AMD/CJS/ESM 模块引入
 
 一般来说 rollup 更适合打包库和组件，相对 webpack 更加纯粹。而且使用 rollup 相对更加简单。
@@ -69,7 +69,9 @@ module.exports = {
     filename: '[name].js',
     library: 'largeNumber',
     libraryExport: 'default', // 如果不设置，使用时 (new largeNumber()).default
-    libraryTarget: 'umd'
+    libraryTarget: 'umd'，
+    globalObject: 'this', // 将构建好的功能挂载在 this 下，而非直接挂载 window 下
+    umdNamedDefine: true,
   },
   optimization: {
     minimize: true,
