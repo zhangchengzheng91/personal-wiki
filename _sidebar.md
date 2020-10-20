@@ -45,6 +45,10 @@
         - [SSR](webpack/03-webpack进阶用法/13-SSR.md)
         - [日志](webpack/03-webpack进阶用法/14-优化构建时命令行显示日志.md)
         - [构建异常和终端处理](webpack/03-webpack进阶用法/15-构建异常和终端处理.md)
+    
+    - [编写可维护的 webapck 配置](webpack/04-编写可维护的webpack配置/)
+    
+        - [构建配置包设计](webpack/04-编写可维护的webpack配置/01-构建配置包设计.md)
 
 - [垃圾回收](垃圾回收/)
 
