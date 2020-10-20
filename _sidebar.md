@@ -44,6 +44,7 @@
         - [webpack打包库和组件](webpack/03-webpack进阶用法/12-webpack打包库和组件.md)
         - [SSR](webpack/03-webpack进阶用法/13-SSR.md)
         - [日志](webpack/03-webpack进阶用法/14-优化构建时命令行显示日志.md)
+        - [构建异常和终端处理](webpack/03-webpack进阶用法/15-构建异常和终端处理.md)
 
 - [垃圾回收](垃圾回收/)
 
