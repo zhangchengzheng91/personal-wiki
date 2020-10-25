@@ -62,6 +62,7 @@
         
         - [stats](webpack/05-webapck构建速度和构建体积优化策略/01-stats.md)
         - [速度分析](webpack/05-webapck构建速度和构建体积优化策略/02-速度分析.md)
+        - [体积分析](webpack/05-webapck构建速度和构建体积优化策略/03-体积分析.md)
 
 - [垃圾回收](垃圾回收/)
 
