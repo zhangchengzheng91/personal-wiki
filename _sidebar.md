@@ -57,6 +57,10 @@
         - [发布构建包到npm](webpack/04-编写可维护的webpack配置/07-发布构建包到npm.md)
         - [git commit 规范与changeLog](webpack/04-编写可维护的webpack配置/08-git-commit规范与changeLog.md)
         - [语义化版本（Semantic Versioning）规范格式](webpack/04-编写可维护的webpack配置/09-语义化版本规范格式.md)
+    
+    - [webpack 构建速度和构建体积优化策略](webpack/05-webapck构建速度和构建体积优化策略/)
+        
+        - [stats](webpack/05-webapck构建速度和构建体积优化策略/01-stats.md)
 
 - [垃圾回收](垃圾回收/)
 
