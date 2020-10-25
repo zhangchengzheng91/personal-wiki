@@ -53,6 +53,10 @@
         - [使用ESLint规范构建脚本](webpack/04-编写可维护的webpack配置/03-使用ESLint规范构建脚本.md)
         - [冒烟测试](webpack/04-编写可维护的webpack配置/04-冒烟测试介绍和实际运用.md)
         - [单元测试与测试覆盖率](webpack/04-编写可维护的webpack配置/05-单元测试与测试覆盖率.md)
+        - [持续集成](webpack/04-编写可维护的webpack配置/06-持续集成.md)
+        - [发布构建包到npm](webpack/04-编写可维护的webpack配置/07-发布构建包到npm.md)
+        - [git commit 规范与changeLog](webpack/04-编写可维护的webpack配置/08-git-commit规范与changeLog.md)
+        - [语义化版本（Semantic Versioning）规范格式](webpack/04-编写可维护的webpack配置/09-语义化版本规范格式.md)
 
 - [垃圾回收](垃圾回收/)
 
