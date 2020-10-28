@@ -71,6 +71,7 @@
         - [缩小构建目标](webpack/05-webapck构建速度和构建体积优化策略/09-缩小构建目标.md)
         - [tree-shaking](webpack/05-webapck构建速度和构建体积优化策略/10-tree-shaking.md)
         - [图片压缩](webpack/05-webapck构建速度和构建体积优化策略/11-图片压缩.md)
+        - [使用动态Polyfill服务](webpack/05-webapck构建速度和构建体积优化策略/12-使用动态Polyfill服务.md)
 
 - [垃圾回收](垃圾回收/)
 
