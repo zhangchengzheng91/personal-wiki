@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    .outer-container {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+    }
+    img {
+      width: 100%;
+      margin: 0;
+    }
+    .inner-container {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #828C96;
+      padding: 5px;
+    }
+  </style>
+  <style>
+    img.error {
+      display: inline-block;
+      transform: scale(1);
+      content: '';
+      /*height: 100%;*/
+      color: transparent;
+    }
+    img.error::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #828C96 url('./break.svg') no-repeat center / 100% 100%;
+    }
+    img.error::after {
+      content: attr(alt);
+      position: absolute;
+      left: 0; bottom: 0;
+      width: 100%;
+      line-height: 2;
+      background-color: rgba(0,0,0,.5);
+      color: white;
+      font-size: 12px;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <h2>
+    传统的图片异常处理
+  </h2>
+  <div>
+    通过 img 标签的 alt 属性来展示图片加载错误的提示信息
+  </div>
+  <div>
+    <p>
+      优点：即使没有图片，也能正确的提示用户，展示图片的缩略功能
+    </p>
+    <p>
+      缺点：UI 比较粗糙，用户体验比较差
+    </p>
+  </div>
+  <div class="outer-container">
+    <div class="inner-container">
+      <img src="./2013-Entry_25002_Egmond_Chaetoceros_debilis.jpg"/>
+    </div>
+    <div class="inner-container">
+      <img src="./hello.img" alt="这是图片加载错误的提示信息"/>
+    </div>
+    <div class="inner-container">
+      <img src="./2017-1-HaCaT_cells.jpg"/>
+    </div>
+  </div>
+</div>
+<hr/>
+<div>
+  <h2>图片加载失败是，展示一个占位符</h2>
+  <div>
+    <p>
+      优点：UI 细腻，用户体验比较好
+    </p>
+    <p>
+      缺点：用户并不清楚无法显示图片具体表示的含义是什么
+    </p>
+  </div>
+  <div class="outer-container">
+    <div class="inner-container">
+      <img src="./2013-Entry_25002_Egmond_Chaetoceros_debilis.jpg"/>
+    </div>
+    <div class="inner-container">
+      <img src="./hello.img" alt="这是图片加载错误的提示信息" onerror="this.src='./break.svg'"/>
+    </div>
+    <div class="inner-container">
+      <img src="./2017-1-HaCaT_cells.jpg"/>
+    </div>
+  </div>
+</div>
+<hr/>
+<div>
+  <h2>同时显示占位符和 alt 信息</h2>
+  <p>
+    注意：img.error::before background 属性中，需要使用颜色覆盖掉破碎的默认显示图片
+  </p>
+  <div>
+    <p>
+      优点：即能展示完全的提示信息，又能提供很好的 UI 体验
+    </p>
+    <p>
+      缺点：需要考虑兼容性问题
+    </p>
+  </div>
+  <div class="outer-container">
+    <div class="inner-container">
+      <img src="./2013-Entry_25002_Egmond_Chaetoceros_debilis.jpg"/>
+    </div>
+    <div class="inner-container">
+      <img src="./hello.img" alt="这是图片加载错误的提示信息" onerror="this.classList.add('error')"/>
+    </div>
+    <div class="inner-container">
+      <img src="./2017-1-HaCaT_cells.jpg"/>
+    </div>
+  </div>
+</div>
+<hr/>
+<div>
+  参考连接：<a href="https://www.zhangxinxu.com/wordpress/2020/10/css-style-image-load-fail/" target="_blank">图片加载失败后CSS样式处理最佳实践</a>
+</div>
+</body>
+</html>
