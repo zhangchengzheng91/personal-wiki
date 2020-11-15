@@ -78,6 +78,9 @@
         - [webpack-cli源码阅读](webpack/06-通过源代码掌握webpack打包原理/02-webpack-cli源码阅读.md)
         - [Tapable插件架构与Hooks设计](webpack/06-通过源代码掌握webpack打包原理/03-Tapable插件架构与Hooks设计.md)
         - [Tapable是如何与webpack关联起来的](webpack/06-通过源代码掌握webpack打包原理/04-Tapable是如何与webpack关联起来的.md)
+        - [准备阶段](webpack/06-通过源代码掌握webpack打包原理/05-webpack流程篇-准备阶段.md)
+        - [模块构建和chunk生成阶段](webpack/06-通过源代码掌握webpack打包原理/06-webpack流程篇-模块构建和chunk生成阶段.md)
+        - [文件生成](webpack/06-通过源代码掌握webpack打包原理/07-webpack流程篇-文件生成.md)
 
 - [垃圾回收](垃圾回收/)
 
