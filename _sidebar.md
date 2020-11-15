@@ -72,6 +72,12 @@
         - [tree-shaking](webpack/05-webapck构建速度和构建体积优化策略/10-tree-shaking.md)
         - [图片压缩](webpack/05-webapck构建速度和构建体积优化策略/11-图片压缩.md)
         - [使用动态Polyfill服务](webpack/05-webapck构建速度和构建体积优化策略/12-使用动态Polyfill服务.md)
+        
+    - [webpack 构建速度和构建体积优化策略](webpack/06-通过源代码掌握webpack打包原理/)
+        - [webpack启动过程分析](webpack/06-通过源代码掌握webpack打包原理/01-webpack启动过程分析.md)
+        - [webpack-cli源码阅读](webpack/06-通过源代码掌握webpack打包原理/02-webpack-cli源码阅读.md)
+        - [Tapable插件架构与Hooks设计](webpack/06-通过源代码掌握webpack打包原理/03-Tapable插件架构与Hooks设计.md)
+        - [Tapable是如何与webpack关联起来的](webpack/06-通过源代码掌握webpack打包原理/04-Tapable是如何与webpack关联起来的.md)
 
 - [垃圾回收](垃圾回收/)
 
