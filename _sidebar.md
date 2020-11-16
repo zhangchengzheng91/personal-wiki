@@ -81,6 +81,7 @@
         - [准备阶段](webpack/06-通过源代码掌握webpack打包原理/05-webpack流程篇-准备阶段.md)
         - [模块构建和chunk生成阶段](webpack/06-通过源代码掌握webpack打包原理/06-webpack流程篇-模块构建和chunk生成阶段.md)
         - [文件生成](webpack/06-通过源代码掌握webpack打包原理/07-webpack流程篇-文件生成.md)
+        - [编写一个简易的webpack准备工作](webpack/06-通过源代码掌握webpack打包原理/08-编写一个简易的webpack.md)
 
 - [垃圾回收](垃圾回收/)
 
