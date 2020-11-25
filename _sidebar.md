@@ -82,6 +82,15 @@
         - [模块构建和chunk生成阶段](webpack/06-通过源代码掌握webpack打包原理/06-webpack流程篇-模块构建和chunk生成阶段.md)
         - [文件生成](webpack/06-通过源代码掌握webpack打包原理/07-webpack流程篇-文件生成.md)
         - [编写一个简易的webpack准备工作](webpack/06-通过源代码掌握webpack打包原理/08-编写一个简易的webpack.md)
+    
+    - [编写 loader 和插件](webpack/07-编写loader和插件)
+        - [loader的链式调用和执行顺序](webpack/07-编写loader和插件/01-loader的链式调用和执行顺序.md)
+        - [loader调试](webpack/07-编写loader和插件/02-loader调试.md)
+        - [更复杂loader的开发](webpack/07-编写loader和插件/03-更复杂loader的开发.md)
+        - [开发一个自动合成雪碧图的loader](webpack/07-编写loader和插件/04-开发一个自动合成雪碧图的loader.md)
+        - [插件基本结构介绍](webpack/07-编写loader和插件/05-插件基本结构介绍.md)
+        - [更复杂的插件场景开发](webpack/07-编写loader和插件/06-更复杂的插件场景开发.md)
+        - [实战开发一个插件](webpack/07-编写loader和插件/07-实战开发一个插件.md)
 
 - [垃圾回收](垃圾回收/)
 
