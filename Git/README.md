@@ -65,3 +65,11 @@ git push origin --tags
 # 检出标签
 git checkout -b <branch-name> <tag-name>
 ```
+
+|命令|描述|其他|
+|:---|:---|:---|
+|git branch -vv| 查看本地分支关联（跟踪）远程分支之间的对应关系||
+|git checkout -f <branchname>| 强制切换分支||
+
+## 疑难杂症
+1. [GIT:git远程分支报错cannot lock ref 'refs/remotes/origin/](https://blog.csdn.net/webEvelement/article/details/103762109)
