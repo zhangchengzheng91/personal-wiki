@@ -37,5 +37,12 @@
 1. 用户在 CDN 上的内容未找到
 1. CDN 上的资源已过期
 
+## CDN 缓存时间的长短
+
+默认情况下，每个文件在 24 小时以后自动过期，可以通过以下两种形式修改默认行为：
+    1. 要更改所有匹配相同路径模式的文件的缓存持续时间，可以更改缓存行为的最短 TTL(Time-To-Live)、最长 TTL 和默认 TTL 的 CloudFront 设置。
+    1. 要更改单个文件的缓存持续时间，您可以配置源以向文件中添加 Cache-Control max-age 或 Cache-Control s-maxage 指令或者 Expires 标头字段。
+
 ## 参考链接
 1. [关于CDN与缓存（浏览器和CDN）](https://www.cnblogs.com/blogbyhuer/p/9335257.html)
+1. [管理内容保留在缓存中的时间长度（过期）](https://docs.aws.amazon.com/zh_cn/AmazonCloudFront/latest/DeveloperGuide/Expiration.html)
