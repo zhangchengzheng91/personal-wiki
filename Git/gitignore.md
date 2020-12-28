@@ -2,7 +2,7 @@
 
 移除 git 缓存
 
-||||
+|语法| 含义| 示例|
 |:---|:---|:---|
 |git rm --cached [filepath]| 移除单个文件| git rm --cached logs/err/log|
 |git rm --cached -f [dirpath]| 移除某个目录| git rm --cached -r logs|
