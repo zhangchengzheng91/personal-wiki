@@ -4,7 +4,7 @@
 
 |语法| 含义| 示例|
 |:---|:---|:---|
-|git rm --cached [filepath]| 移除单个文件| git rm --cached logs/err/log|
+|git rm --cached [filepath]| 移除单个文件| git rm --cached logs/err.log|
 |git rm --cached -f [dirpath]| 移除某个目录| git rm --cached -r logs|
 |git rm --cached .| 移除所有文件| git rm --cached .|
 |git rm --cached -r [filepath dirpath .]| 强制移除| git rm --cached -r .|
