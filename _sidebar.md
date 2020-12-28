@@ -146,6 +146,8 @@
 
 - [Git](Git/)
 
+     - [gitignore](Git/gitignore.md)
+
 - npm
 
    - [npx](npm/npx.md)
