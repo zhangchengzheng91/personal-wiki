@@ -8,6 +8,7 @@
     - [du](Linux/du/README.md)
     - [sort](Linux/sort/README.md)
     - [head](Linux/head/README.md)
+    - [lsof](Linux/lsof/README.md)
     
 - 编辑器
 
