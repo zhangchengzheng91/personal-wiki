@@ -4,14 +4,19 @@ typeof 返回的值不一定准确
 ```js
 var str1 = 'hello'
 typeof str1 // "string"
+str1 instanceof String // true
 
 var str2 = new String('world')
 typeof str2 // "object"
+str2 instanceof String // true
 
 var arr = [0, 1, 2]
 var tom = { age: 18 }
 typeof arr // "object"
 typeof tom "object"
+arr instanceof Array // true
+arr instanceof Object // true
+tom instanceof Object // true
 ```
 
 ```js
