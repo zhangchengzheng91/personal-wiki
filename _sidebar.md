@@ -10,6 +10,10 @@
     - [head](Linux/head/README.md)
     - [lsof](Linux/lsof/README.md)
     
+- [JavaScript](JavaScript)
+
+    - [类型检查](JavaScript/类型检查/README.md)
+    
 - 编辑器
 
     - [webstorm](编辑器/Webstrom.md)
