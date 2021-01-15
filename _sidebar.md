@@ -14,6 +14,8 @@
 
     - [类型检查](JavaScript/类型检查/README.md)
     
+- [TypeScript](TypeScript/)
+
 - 编辑器
 
     - [webstorm](编辑器/Webstrom.md)
