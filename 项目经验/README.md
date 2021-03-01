@@ -2,3 +2,11 @@
 
 - [RBAC 权限设计](项目经验/RBAC.md)
 - [国际化](项目经验/国际化.md)
+- [nextjs项目升级重点](项目经验/nextjs项目升级重点.md)
+- [SSR](项目经验/SSR.md)
+
+1. CSR 与 SSR 的区别
+1. webpack 核心概念，webpack 常用的优化方式
+1.
+1.
+1. 项目优化：缓存【服务端、客户端、cdn】、文件压缩【json、js、css】、SEO、并发
