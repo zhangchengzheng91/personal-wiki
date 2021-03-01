@@ -17,3 +17,30 @@
 |pages/post/create.js|✔️|✖️|✖️|
 |pages/post/[pid].js|✖️|✔️|✖️|
 |pages/post/[...slug].js|✖️|✖️|✔️|
+
+## 浅路由(Shallow Routing)
+
+```js
+router.push(currentPath, newPath, { shallow: true })
+
+// 浅路由生效，两次的 pathname 相同
+router.push('/?counter=10', undefined, { shallow: true })
+
+// 浅路由不生效 "/" !== "/about"
+router.push('/?counter=10', '/about?counter=10', { shallow: true })
+```
+
+改变路由，但是只执行一次 componentDidMount 生命周期，包括 getServerSideProps, getStaticProps, getInitialProps。
+
+**只有在相同 pathname 的情况下才能生效**
+
+## 路由的跳转方式
+
+1. 声明式 <Link to='/path'/>
+1. 编程式 router.push('/path')、router.replace('/path')
+
+    如果是 replace，会替换掉浏览器浏览记录中的当前记录
+
+## 参考链接
+
+1. [vue 路由知识点梳理及应用场景整理](https://www.cnblogs.com/linxue/p/10293893.html)
