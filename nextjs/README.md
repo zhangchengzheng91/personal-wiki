@@ -6,3 +6,4 @@
 - [API Routes](nextjs/API-Routes.md)
 - [Deployment](nextjs/Deployment.md)
 - [Authentication 权限](nextjs/Authentication.md)
+- [Advanced Features](nextjs/Advanced-Features/)
