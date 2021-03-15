@@ -4,6 +4,7 @@
 - [国际化](项目经验/国际化.md)
 - [nextjs项目升级重点](项目经验/nextjs项目升级重点.md)
 - [SSR](项目经验/SSR.md)
+- [node 版本切换问题](项目经验/node-版本切换问题.md)
 
 1. CSR 与 SSR 的区别
 1. webpack 核心概念，webpack 常用的优化方式
