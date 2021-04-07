@@ -191,7 +191,16 @@ path:       /academy/images
 
 从以上的分析中可以看出，HTTP/2 与 HTTP/1.1 在许多方面有所不同，有些特性提供了更大程度的控制，可以用来更好的优化 web 应用程序的性能，还有其他一些只是改进了以前的协议。现在基本已经对两个协议指甲你的差异有了一个整体的认识，比如：多路复用、流优先级、流控制、服务器推送和HTTP/2 的 HPACK 压缩。
 
+||HTTP/1| HTTP/1.1| HTTP/2|
+|:---|:---|:---|:---|
+|并发实现| 建立多个连接，实现并发| 建立多个连接实现并发| 多路复用，允许在一个连接上多并发交换信息|
+|首部压缩| 不支持，浪费流量| 不支持，浪费流量| 支持，可以实现 header 复用，比如 cookies 等|
+|资源优先级排序| 不支持| 不支持| 通过 STREAM ID 排列请求优先级，通过权重 wt 分配请求资源|
+|资源传输形式|纯文本| 纯文本|二进制|
+|server push| | 资源内联，否则不支持| 支持 server push|
+
 如果希望看到 HTTP/1.1 和 HTTP/2 之间的性能比较，可以查看 Google 在比较不同协议延迟之间的 [演示](https://http2.golang.org/gophertiles) 。更详尽的信息，可以查看文章 [HTTP/2 – A Real-World Performance Test and Analysis](https://css-tricks.com/http2-real-world-performance-test-analysis/)
 
 ## 参考链接
 * [HTTP/1.1 vs HTTP/2: What's the Difference?](https://www.digitalocean.com/community/tutorials/http-1-1-vs-http-2-what-s-the-difference#:~:text=As%20opposed%20to%20HTTP%2F1.1,verbs%2C%20methods%2C%20and%20headers.)
+* [CSDN-Http2特性——Binary framing layer--push---HPAC](https://blog.csdn.net/zhjali123/article/details/105457798)
