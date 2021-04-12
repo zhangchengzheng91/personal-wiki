@@ -180,9 +180,16 @@ same site 的 3 个属性
 ```js
 // 创建 cookie
 // 默认路径 '/'， 默认过期时间 session[关闭浏览器，清除 cookie]
+// 只能读取非 HttpOnly 类型放入 cookie
 document.cookie="username=John Doe";
 
 // 使用 expires 参数设置 cookie 过期时间[以 UTC 或 GMT 时间]。默认关闭浏览器时删除
+// new Date().toGMTString()或者 new Date().toUTCString()
+// 如果未设计 expires，这样的 cookie 称为会话 cookie，保存在内存中，会话结束，也就是浏览器关闭时，cookie 消失
+// Expires是 http/1.0协议中的选项，在http/1.1协议中Expires已经由 Max age 选项代替，两者的作用都是限制
+// cookie 的有效时间。Expires的值是一个时间点（cookie失效时刻= Expires），而Max age的值是一个以秒为单位
+// 时间段（cookie失效时刻= 创建时刻+ Max age）。 另外， Max age的默认值是 -1(即有效期为 session )；
+// Max age有三种可能值：负数、0、正数。负数：有效期session；0：删除cookie；正数：有效期为创建时刻+ Max age
 document.cookie="username=John Doe; expires=Thu, 18 Dec 2043 12:00:00 GMT"; 
 
 // 使用 path 参数设置 cookie 目录。默认为：/，默认为根目录
@@ -203,7 +210,12 @@ document.cookie="username=John Doe login; expires=Thu, 18 Dec 2043 12:00:00 GMT;
 var cookie = document.cookie // cookie = 'cookie1=value; cookie2=value; cookie3=value;'
 
 // 修改 cookie
+// 当 name，domain，path 这 3 个字段都相同的时候，cookie 才会被覆盖
 document.cookie=`${cookie.key}=${newValue}`
+
+// httpOnly: 这个选项用来设置cookie是否能通过 js 去访问
+// 当cookie带httpOnly选项时，客户端则无法通过js代码去访问（包括读取、修改、删除等）这个cookie。
+
 ```
 
 ## SameSite
