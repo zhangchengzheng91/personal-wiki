@@ -6,6 +6,19 @@
 
 在阅读本文之后，将理解 HTTP/1.1 和 HTTP/2 之间的主要区别，重点关注 HTTP/2 为实现高效 Web 协议而采用的技术变化。
 
+## 开发 HTTP/2 的主要目标
+[HTTP/2: the difference between HTTP/1.1, benefits and how to use it](https://factoryhr.medium.com/http-2-the-difference-between-http-1-1-benefits-and-how-to-use-it-38094fa0e95b)
+
+* 协议协商机制 -- 协议选举。例如：HTTP/1.1 HTTP/2 或其他
+* 与 HTTP/1.1 的请求方法、状态码、URLs 和 headers 字段的高级兼容性
+* 改善页面加载速度
+* 请求头压缩
+* 二进制协议
+* 服务器推送
+* 通过单个 TCP 连接请求多路复用
+* 请求流失线
+* 头部阻塞 -- 封装阻塞
+
 ## 背景
 
 在详细解释 HTTP/2 对 HTTP/1.1 的改变之前，先纵观下 HTTP 的发展历史和工作原理。
@@ -64,11 +77,27 @@ HTTP/1.1 通过引入**持久连接和管道**连解决这个问题。对于持�
 
 在 HTTP/2 中，二进制帧层对请求/响应进行编码，并将它们分割成更小的信息包，从而大大增加了数据传输的灵活性。
 
+![binary-protocols](./assets/binary-protocols.png)
+
+这样做的好处：
+
+* 解析数据的低开销 -- a critical value proposition in HTTP/2 vs HTTP1.
+* 不容易出错
+* 更轻的网络占用空间
+* 高效利用网络资源
+* 消除与 HTTP/1.x 的文本性质相关的安全关注，例如响应分裂攻击
+* 支持 HTTP/2 的其他功能：压缩、多路复用、优先级排序、流控制和有效处理 TLS
+* 命令的紧凑表示形式，以便于处理和实现。
+* 客户端和服务器之间的数据处理是高效的和健壮的
+* 减少网络延迟，提高吞吐量
+
 让我们仔细看看这是如何工作的。HTTP/1.1 必须使用多个 TCP 连接来减少**队头阻塞**的影响，于此相反，HTTP/2 在两台计算机之间建立单个连接对象。在这个连接中有多个数据流。每个流由多条消息组成，采用熟悉的请求/响应格式。最后，这些信息被分解成更小的单位，称为帧。
 
 ![Streams_Frames](./Streams_Frames.png)
 
 在最细粒度的级别上，通信通道由一组二进制编码帧组成，每个帧都标记到特定的流。识别标签允许在传输过程中交叉这些帧并在另一端重新组装它们。交织的请求和响应可以并行运行，而不会阻塞其后的消息，这个过程称为**多路复用**。多路复用技术通过确保没有消息需要等待另一个消息完成来解决 HTTP/1.1 中的队头阻塞问题。这还意味着服务器和客户端可以发送并发请求和响应，从而实现更好的控制和更高效的连接管理。
+
+![多路复用](./assets/multiple-requests.png)
 
 由于多路复用允许客户端并行构造多个流，这些流只需要使用单个 TCP 连接。通过减少整个网络的内存和处理占用，每个源拥有一个持久连接可以改进 HTTP/1.1。这将带来更好的网络和宽带利用率，从而降低整体运营成本。
 
@@ -130,6 +159,8 @@ HTTP/2 在单个 TCP 连接中多路数据流。因此，TCP 连接层上的接�
 
 #### HTTP/2 Server Push（服务器推送）
 
+![http-2-server-push](./assets/http-2-server-push.png)
+
 由于 HTTP/2 允许对客户端的初始 GET 请求作出多个并发响应，因此服务器可以将资源连同请求的 HTML 页面一起发送给客户端，并在客户端请求之前提供资源。这个过程称之为**服务器推送**。通过这种方式，HTTP/2 可以实现同样的资源内联目标，同时保持推送的资源和文档之间的分离。这意味着客户端可以决定缓存或者拒绝从主 HTML 文档中分离出来推送的资源，从而修复资源内联的主要缺陷。
 
 在 HTTP/2 中，当服务器发送 PUSH_promise 帧通知客户端它将推送一个资源时，这个过程就开始了。此框架仅包括消息的头部，并允许客户端提前知道服务器将推送哪个资源，如果已经缓存了资源，客户端可以通过发送 rst_stream 帧作为响应来拒绝推送。PUSH_promise 框架还保存了客户端向服务器发送重复请求的请求，因为它知道服务器将推送哪些资源。
@@ -137,6 +168,14 @@ HTTP/2 在单个 TCP 连接中多路数据流。因此，TCP 连接层上的接�
 这里需要注意的是，服务器推送的重点是客户端控制机制。如果客户端需要调整服务器推送的优先级，甚至禁用它，它可以在任何时候发送一个设置帧来修改这个 HTTP/2 的特性。
 
 尽管这个特性有很大的潜力，但服务器推送并不总是优化 web 应用的答案。例如，一些 web 浏览器不能总是取消推送请求，即使客户端已经缓存了资源。如果客户端错误地允许服务器发送重复资源，服务器推送可能会不必要地使用连接。最后，服务器推送应该由开发人员自己决定使用。想了解更多关于如何战略性地使用服务器推送和优化 web 应用程序的信息，请查看 Google 开发的 [PRRL 模式](https://developers.google.com/web/fundamentals/performance/prpl-pattern/) 。要了解更多关于服务器推送可能出现的问题，请查看 Jake Archibald 的博客 [HTTP/2 push 比我想象的要难](https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/) 。
+
+好处：
+* 客户端在缓存中保存推送的资源
+* 客户端可以跨页面复用缓存的资源
+* 服务器可以在同一个 TCP 连接中复用推送资源和最初请求信息
+* 服务器可以对推出的资源优先级排序 -- HTTP/2 vs HTTP1中的一个关键性能差异因素
+* 客户端可以拒绝推送资源以维护有效的缓存资源存储库，或者完全禁用 server push
+* 客户端还可以同时限制推送流多路复用的数量
 
 ## Compression（压缩）
 
@@ -187,6 +226,8 @@ path:       /academy/images
 
 通过使用 HPACK 和其他压缩算法，HTTP/2 提供了另一个可以减少客户端-服务器延迟的特性
 
+![http:2-hapack-compression](./assets/http-2-hapack-compression.png)
+
 ## Conclusion（总结） 
 
 从以上的分析中可以看出，HTTP/2 与 HTTP/1.1 在许多方面有所不同，有些特性提供了更大程度的控制，可以用来更好的优化 web 应用程序的性能，还有其他一些只是改进了以前的协议。现在基本已经对两个协议指甲你的差异有了一个整体的认识，比如：多路复用、流优先级、流控制、服务器推送和HTTP/2 的 HPACK 压缩。
@@ -204,3 +245,4 @@ path:       /academy/images
 ## 参考链接
 * [HTTP/1.1 vs HTTP/2: What's the Difference?](https://www.digitalocean.com/community/tutorials/http-1-1-vs-http-2-what-s-the-difference#:~:text=As%20opposed%20to%20HTTP%2F1.1,verbs%2C%20methods%2C%20and%20headers.)
 * [CSDN-Http2特性——Binary framing layer--push---HPAC](https://blog.csdn.net/zhjali123/article/details/105457798)
+* [HTTP/2: the difference between HTTP/1.1, benefits and how to use it](https://factoryhr.medium.com/http-2-the-difference-between-http-1-1-benefits-and-how-to-use-it-38094fa0e95b)
