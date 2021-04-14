@@ -69,6 +69,7 @@
 ## 比较好用的 headless CMS 框架
 
 1. [strapi](https://strapi.io/)
+1. [Build fast sites.In record time.](https://pages.cloudflare.com/)
 
 ## 评价
 
@@ -85,3 +86,4 @@
 1. [CaaS: 内容是新的基础设施 Content-as-a-Service](https://zhuanlan.zhihu.com/p/86848252)
 1. [Headless CMS 详细介绍](http://quanzhan.applemei.com/webStack/TXpNNU13PT0=)
 1. [sitecore 数字营销资源](https://www.sitecore.com/zh-cn/knowledge-center/digital-marketing-resources/what-is-a-headless-cms)
+1. [前端架构之 JAMStack](https://zhuanlan.zhihu.com/p/137809668)
