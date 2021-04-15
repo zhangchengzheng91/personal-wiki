@@ -69,6 +69,10 @@ same site 的 3 个属性
 
 1. 2022年后， Chrome 将全面禁用第三方 cookie。即使 SameSite 的值为 None
 
+1. samesite=None 的 cookie，被标记为 Secure。只有在 HTTPS 的情况下实用 samesite=None
+
+[Incrementally Better Cookies](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00)
+
 ## 当三方 cookie 全面禁止，将会发生什么？
 
 依赖三方 cookie 的功能将会异常
@@ -220,6 +224,54 @@ document.cookie=`${cookie.key}=${newValue}`
 
 ## SameSite
 
+### 含义
+
+有效顶级域名（eTLD, effective top-level domain）[PUBLIC SUFFIX LIST](https://publicsuffix.org/) 。包含两部分的内容
+
+1. 一部分是由域名注册机构提供的顶级域名（例如: .com .net 等）和部分二级域名（例如: .gov.uk .com.br 等）
+1. 另一部分是有个人或机构提供的私有域名，例如: github.io  computer.amazionaws.com 等
+
+SameSite 里的 site 指的是 eTLD+1，即：有效顶级域名再加它的下一级域名
+
+||site|eLTD| eLTD+1|
+|:---|:---|:---|:---|
+|qzone.qq.com| qq.com|.com| qq.com|
+|vip.qzone.qq.com| qq.com|.com|qq.com|
+|bootstrap.github.io|bootstrap.github.io|github.io|bootstrap.github.io|
+
+### same-site request VS cross-site request
+
+一个 HTML 页面既可以发起同站请求，也可以发起跨站请求。当请求目标的 URL 对应的 site 与页面所在 URL 对一个的 site 相同时，这个请求就是
+同站请求，反之就是跨站请求。
+
+|page url| request url| is cross site|
+|:---|:---|:---|
+|baidu.com| static.baidu.com| same site|
+|a.gihub.io| b.github.io| cross site|
+
+同源 = 同协议、同域名、同端口。
+
+同源一定同站，同站不一定同源（www.baidu.com 和 static.baidu.com）。
+
+### 属性值
+
+|None|Lax|Strict|
+|:---|:---|:---|
+|同站求情和跨站强求都会携带此 cookie|同站请求会携带此 cookie，特殊情况的跨站请求也会携带此 cookie<br/>safe corss-site top-level navigatios(安全的跨站顶级跳转):<br/>点击超链接\<a\> 产生的请求<br/>以GET 方式提交表单产生的请求<br/>JS 修改 location 对象产生的跳转<br/>JS 调用 widow.open() 等方式产生的跳转请求|只有同站请求会携带此 cookie|
+
+```bash
+// http header
+Set-Cookie: sessionId=F123ABCA; SameSite=Strict; secure; httponly;
+// js
+document.cookie= "sessionId=F123ABCA; SameSite=Strict; secure;"
+```
+
+不同方式的跨站请求
+
+![不同方式的跨站请求](./assets/不同方式的跨站请求.jpeg)
+
+[specify prerender processing model](https://github.com/w3c/resource-hints/issues/63)
+
 参考位置：[关于 cookie samesite 的困惑](/翻译/cookie-samesite.md)
 
 ## 参考链接
@@ -229,3 +281,5 @@ document.cookie=`${cookie.key}=${newValue}`
 1. [cookie中的path与domain属性详解](https://blog.csdn.net/andyzhaojianhui/article/details/79071747)
 1. [cookie MDN 文档](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/cookie)
 1. [一文带你看懂cookie，面试前端不用愁](https://zhuanlan.zhihu.com/p/52091630)
+1. [CSRF 漏洞的末日？关于 Cookie SameSite 那些你不得不知道的事
+](https://zhuanlan.zhihu.com/p/137408482)
