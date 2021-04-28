@@ -42,6 +42,24 @@ Unix 中的 pipeline
 Compose(webpack 采取的是这种)
 
 ```js
+function f1(a) {
+  return a + 1
+}
+function f2(b) {
+  return b + 1
+}
+function f3(c) {
+  return c + 1
+}
+function compose() {
+  console.log('arguments=', arguments)
+  
+}
+
+const result = compose(f1, f2, f3)
+```
+
+```js
 compose = (f, g) => (...args) => f(g(...args))
 ```
 

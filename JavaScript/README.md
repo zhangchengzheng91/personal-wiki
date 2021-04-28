@@ -5,5 +5,7 @@
 - [继承](JavaScript/继承/)
 - [Promise](JavaScript/Promise/)
 - [class](JavaScript/class/)
+- [function-vs-arrow-function](JavaScript/function-vs-arrow-function.md)
+- [call-apply-bind](javaScript/call-apply-bind.md)
 
 1. 事件循环、微任务、宏任务

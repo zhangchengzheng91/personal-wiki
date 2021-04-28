@@ -1,4 +1,4 @@
-# Promise 
+# Promise
 
 特点：
 1. 对象的状态不受外界的影响。包含三种状态：pending, fulfilled, rejected。只有异步
@@ -25,3 +25,9 @@ new Promise((resolve, reject) => {
 ```
 
 立即 resolved 的 Promise 是在本轮事件循环的末尾执行，总是晚于本轮循环的同步任务。
+
+## Promise.race() 其中一个返回，其他的是否会继续执行？
+
+
+- [使用Promise兼容callback](javaScript/Promise/使用Promise兼容callback.md)
+
