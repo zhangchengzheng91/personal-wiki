@@ -18,7 +18,7 @@
 
 	- [postion-vs-display](css/postion-vs-display.md)
 	- flex 实现瀑布流布局
-	- position 的属性值，stick
+	- [position 的属性值，stick](css/position/stick/README.md)
 	- css3 开启硬件加速
 
 - 计算机网络
