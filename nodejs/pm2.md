@@ -7,6 +7,8 @@
 head ~/.pm2/pm2.log
 
 pm2 monit
+
+pm2 show [server name]
 ```
 
 这里会有一个问题：如果 log 文件和 pm2 monit 中的 node 版本不一致，应该以谁为主呢？
