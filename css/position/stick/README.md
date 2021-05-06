@@ -4,6 +4,9 @@
 
 这个粘性定位，只是相对于父元素
 
+参考连接：
+[MDN position 文档](https://developer.mozilla.org/zh-CN/docs/Web/CSS/width)
+
 <div>
   <div style="height: 60px; background-color: red;position: sticky; top: 0;border: 2px solid black;">header</div>
   <ul>
