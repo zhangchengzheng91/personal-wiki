@@ -20,7 +20,7 @@ function promiseFunc() {
     function callback(data) {
       resolve(data)
     }
+    asyncFunc(callback)
   })
-  asyncFunc(callback)
 }
 ```
