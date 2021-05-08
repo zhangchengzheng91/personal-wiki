@@ -27,7 +27,6 @@
 	- [301-vs-302.md](/计算机网络/301-vs-302.md.md)
 	- ETAG 是如何添加到 headers 上
 	- ETAG 的有效期；原始路由，业务更新，但是新业务UI未更新
-	- 如何终止一个 http 请求
 
 
 - React
@@ -39,6 +38,10 @@
 	- diff 算法的时间复杂度，diff 算法描述
 	- hook 的优势
 	- class 组件与 function 组件的区别
+	- react class 组件和 function 组件的区别，function 组件设计的意义
+	- HOC 实现了哪些功能
+	- hooks 的优势
+	- useMemory 和 useCallback 的性能优化，以及会有哪些问题
 
 - javaScript
 
@@ -46,10 +49,13 @@
 	- 闭包的含义
 	- 变量的作用域
 	- 原型链
+	- [防抖和节流](javaScript/防抖和节流/)
+	- script defer 和 async 的区别
+	- [fetch 如何终止一个 http 请求](javaScript/fetch.md)
 
 - ES6
 
-	- [使用Promise兼容callback](javaScript/Promise/使用Promise兼容callback.md)
+	- [使用Promise兼容callback](JavaScript/Promise/使用Promise兼容callback.md)
 	- [function-vs-arrow-function](JavaScript/function-vs-arrow-function.md)
 	- [Promise](javaScript/Promise/)
 	- 比较常用的 ES6 的语法
@@ -68,3 +74,7 @@
 	- 计算白屏时间
 	- next 生命周期
 	- 为什么使用 cluster 模式启动服务？为什么 instance - 1
+
+- nodejs
+
+	- 实现洋葱模型
