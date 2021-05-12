@@ -10,6 +10,12 @@ function f3(c) {
 function compose() {
   const composeArguments = arguments
   return function(name) {
+    /*
+    * Accumulator (acc) (累计器)
+    * Current Value (cur) (当前值)
+    * Current Index (idx) (当前索引)
+    * Source Array (src) (源数组)
+    * */
     return Array.prototype.reduce.call(composeArguments, (acc, cur, idx, src) => {
       return cur(acc)
     }, name)
