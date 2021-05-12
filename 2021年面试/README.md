@@ -52,6 +52,7 @@
 	- [防抖和节流](javaScript/防抖和节流/)
 	- script defer 和 async 的区别
 	- [fetch 如何终止一个 http 请求](javaScript/fetch.md)
+	- [有趣的异步执行](JavaScript/有趣的异步执行.md)
 
 - ES6
 
