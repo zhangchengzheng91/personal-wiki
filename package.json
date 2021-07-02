@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "docsify serve . -p 3000 --livereload-port 3001",
+    "stop": "pm2 stop personal-wiki && pm2 delete personal-wiki",
+    "local": "pm2 start ecosystem.config.js && pm2 ls",
+    "dev": "npm run stop && docsify serve . -p 30000 --livereload-port 30001",
     "ssr": "docsify start ."
   },
   "repository": {

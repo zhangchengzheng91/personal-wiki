@@ -1,6 +1,6 @@
 module.exports = {
   apps : [{
-    name: "app",
+    name: "personal-wiki",
     script: "npm run dev",
     env: {
       NODE_ENV: "development",
