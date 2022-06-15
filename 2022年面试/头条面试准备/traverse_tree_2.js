@@ -1,4 +1,5 @@
 console.log('通过广度遍历的方式去遍历一颗树')
+console.log('队列，前端删除，后端插入，先进先出')
 
 const root = {
   value: 1,
