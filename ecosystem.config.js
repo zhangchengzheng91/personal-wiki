@@ -1,15 +1,9 @@
 module.exports = {
-  apps : [{
-    name: "personal-wiki",
-    script: "npm run dev",
-    env: {
-      NODE_ENV: "development",
-    },
-    env_production: {
-      NODE_ENV: "production",
-    }
-  }, {
-    name: 'worker',
-    script: 'worker.js'
-  }]
+  script: "serve",
+  env: {
+    PM2_SERVE_PATH: '.',
+    PM2_SERVE_PORT: 8080,
+    PM2_SERVE_SPA: 'true',
+    PM2_SERVE_HOMEPAGE: './index.html'
+  }
 }
