@@ -8,3 +8,6 @@
 |⌘ + 7| Tool Windows -> Structure| 在当前窗口展示当前文件结构，支持搜索|
 |⌘ + F12| Navigate -> File Structure| 以弹框的形式展示当前文件结构，支持搜索|
 
+## 在 Webstrom 中预览 mermaid
+
+preferences -> Languages & Framedworks -> Markdown -> Markdown extensions -> mermaid
