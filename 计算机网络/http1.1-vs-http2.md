@@ -97,6 +97,8 @@ HTTP/1.1 通过引入**持久连接和管道**连解决这个问题。对于持�
 
 在最细粒度的级别上，通信通道由一组二进制编码帧组成，每个帧都标记到特定的流。识别标签允许在传输过程中交叉这些帧并在另一端重新组装它们。交织的请求和响应可以并行运行，而不会阻塞其后的消息，这个过程称为**多路复用**。多路复用技术通过确保没有消息需要等待另一个消息完成来解决 HTTP/1.1 中的队头阻塞问题。这还意味着服务器和客户端可以发送并发请求和响应，从而实现更好的控制和更高效的连接管理。
 
+![HTTP-vs-with-Push-HTTP1](./assets/HTTP-vs-with-Push-HTTP1.gif)
+![HTTP-vs-with-Push-HTTP2](./assets/HTTP-vs-with-Push-HTTP2.gif)
 ![多路复用](./assets/multiple-requests.png)
 
 由于多路复用允许客户端并行构造多个流，这些流只需要使用单个 TCP 连接。通过减少整个网络的内存和处理占用，每个源拥有一个持久连接可以改进 HTTP/1.1。这将带来更好的网络和宽带利用率，从而降低整体运营成本。
@@ -158,6 +160,8 @@ HTTP/2 在单个 TCP 连接中多路数据流。因此，TCP 连接层上的接�
 但是在资源内联方面存在一些问题。在 HTML 文档中包含资源对于较小的、基于文本的资源来说是一个可行的解决方案，但是非文本格式的较大文件可以大大增加 HTML 的大小，最终会降低连接速度，不能给你抵消实用呢这种技术所获得的原始优势。此外，由于内联资源不再与 HTML 文档分离，因此客户端没有机制拒绝已经有的资源，或者将资源放置到缓存中，如果多个页面需要的资源，那么每个 HTML 文档在其代码中都会有相同的内联资源，这将导致更大的 HTML 文档和更长的加载时间，而不是简单地在开始时缓存资源。
 
 #### HTTP/2 Server Push（服务器推送）
+
+![HTTP-vs-with-Push-HTTP2push](./assets/HTTP-vs-with-Push-HTTP2push.gif)
 
 ![http-2-server-push](./assets/http-2-server-push.png)
 
@@ -246,3 +250,4 @@ path:       /academy/images
 * [HTTP/1.1 vs HTTP/2: What's the Difference?](https://www.digitalocean.com/community/tutorials/http-1-1-vs-http-2-what-s-the-difference#:~:text=As%20opposed%20to%20HTTP%2F1.1,verbs%2C%20methods%2C%20and%20headers.)
 * [CSDN-Http2特性——Binary framing layer--push---HPAC](https://blog.csdn.net/zhjali123/article/details/105457798)
 * [HTTP/2: the difference between HTTP/1.1, benefits and how to use it](https://factoryhr.medium.com/http-2-the-difference-between-http-1-1-benefits-and-how-to-use-it-38094fa0e95b)
+* [HTTP 1.1 vs HTTP.2 vs HTTP/2 with Push](https://freecontent.manning.com/animation-http-1-1-vs-http-2-vs-http-2-with-push/)
