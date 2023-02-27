@@ -11,3 +11,8 @@
 ## 在 Webstrom 中预览 mermaid
 
 preferences -> Languages & Framedworks -> Markdown -> Markdown extensions -> mermaid
+
+## webstorm 官方文档
+
+1. [中文文档](https://jetbrains.com.zh.xy2401.com/help/webstorm/tutorial-finding-and-replacing-text-using-regular-expressions.html)
+2. [英文文档](https://www.jetbrains.com/help/webstorm/working-with-source-code.html)
