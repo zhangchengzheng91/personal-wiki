@@ -43,3 +43,4 @@ du (选项)(参数)
 ## 参考链接
 
 1. [du 命令，Linux du 命令详解：显示每个文件和目录的磁盘使用空间 -  Linux 命令搜索引擎](https://wangchujiang.com/linux-command/c/du.html)
+2. [dust](https://github.com/bootandy/dust?tab=readme-ov-file)
