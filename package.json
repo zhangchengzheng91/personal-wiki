@@ -8,7 +8,10 @@
     "stop": "pm2 stop personal-wiki && pm2 delete personal-wiki",
     "local": "pm2 start ecosystem.config.js && pm2 ls",
     "dev": "npm run stop && docsify serve . -p 30000 --livereload-port 30001",
-    "ssr": "docsify start ."
+    "ssr": "docsify start .",
+    "astro-dev": "astro dev",
+    "astro-build": "astro build",
+    "astro-preview": "astro preview"
   },
   "repository": {
     "type": "git",
@@ -22,7 +25,16 @@
   },
   "homepage": "https://github.com/zhangchengzheng91/personal-wkiki#readme",
   "dependencies": {
+    "@astrojs/react": "^4.3.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "astro": "^5.12.0",
     "docsify": "^4.11.4",
-    "docsify-cli": "^4.4.1"
+    "docsify-cli": "^4.4.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sass": "^1.89.2",
+    "tailwindcss": "^4.1.11"
   }
 }
